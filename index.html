@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="autocomplete">
+      <label for="nameRepo">
+        <p class="autocomplete__field-name">Введите название репозитория</p>
+        <input type="text" id="autocomplete" class="autocomplete__input">
+      </label>
+
+      <div class="autocomplete__result">
+        <ul class="autocomplete__result-list">
+          <li class="autocomplete__result-list-item"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="repolist">
+      <ul class="repolist__list">
+        <li class="repolist__list-item">
+            <div>
+              <p class="repolist__text"></p>
+              <p class="repolist__text"></p>
+              <p class="repolist__text"></p>
+            </div>
+            <button class="repolist__button-delete"></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/index.js" type="module"></script>
+
+
+
+</body>
+</html>

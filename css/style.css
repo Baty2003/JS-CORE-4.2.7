@@ -1,0 +1,112 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;	
+}
+
+.container {
+	width: 400px;
+	padding: 10px;
+	border: 1px solid rgb(0, 196, 196);
+	border-radius: 5px;
+	min-height: 200px;
+	margin: 0 auto;
+}
+.autocomplete {
+	text-align: center;
+}
+
+.autocomplete__field-name {
+	text-decoration: underline;
+}
+
+.autocomplete__input {
+	width: 260px;
+	height: 25px;
+	font-size: 18px;
+	transition: 0.2s;
+}
+
+.autocomplete__input:focus {
+	outline-color: orange;
+}
+
+.autocomplete__result-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background: rgb(216, 216, 216);
+	width: 270px;
+
+}
+.autocomplete__result-list-item {
+	padding: 5px;
+	text-align: left;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.autocomplete__result-list-item:hover{
+	background: rgba(0, 0, 0, 0.2);
+	transform: translateX(10px);
+}
+
+
+.autocomplete__result-list-item:active{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+
+.autocomplete__result {
+	display: flex;
+	justify-content: center;
+	margin-top: 2px;
+}
+.repolist {
+	text-align: left;
+	margin-top: 15px;
+}
+
+.repolist__list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.repolist__list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 10px;
+	background: rgb(27, 228, 255);
+	color: white;
+	font-size: 18px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	border: 2px solid greenyellow;
+	transition: 0.3s;
+}
+.repolist__text {
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+.repolist__button-delete{
+	background: transparent url(../img/krest.svg) no-repeat center;
+	border: none;
+	width: 40px;
+	height: 40px;
+	transition: 0.2s;
+}
+
+.repolist__button-delete:hover{
+	transform: rotate(30deg);
+	filter: invert(1);
+}
+
+.repolist__button-delete:active{
+	transform: rotate(30deg) scale(1.3);
+}
+
+
