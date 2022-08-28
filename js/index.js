@@ -12,20 +12,20 @@ autocompleteResultList.innerHTML = '';
 repoList.innerHTML = '';
 
 autocompleteInput.addEventListener('input', () => {
-  autocompleteResultList.innerHTML = '';
 
   if (!autocompleteInput.value) return;
 
   getDataDebounce(autocompleteInput.value)
     .then(({ items }) => {
       dataRepositories = items;
+      autocompleteResultList.innerHTML = '';
       for (let i = 0; i < 5; i++) {
         autocompleteResultList.append(
           generateLiResult(items[i].name, 'autocomplete__result-list-item', i)
         );
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => err);
 });
 
 autocompleteResultList.addEventListener('click', (e) => {
@@ -55,7 +55,6 @@ repoList.addEventListener('click', (e) => {
   li.style.transform = 'translateX(-30px)';
 
   setTimeout(() => {
-	li.closest('li').remove();
+    li.closest('li').remove();
   }, 100);
-  
 });

@@ -3,7 +3,7 @@ function getData(name) {
     fetch(`https://api.github.com/search/repositories?q=${name}&sort=stars`, {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: 'token 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',
+        Authorization: 'token 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',
       },
     })
       .then((response) => {
@@ -35,6 +35,6 @@ function debounce(callBack, delay) {
   };
 }
 
-const getDataDebounce = debounce(getData, 300);
+const getDataDebounce = debounce(getData, 500);
 
 export { getDataDebounce };
