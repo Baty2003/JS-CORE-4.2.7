@@ -3,7 +3,7 @@ function getData(name) {
     fetch(`https://api.github.com/search/repositories?q=${name}&sort=stars`, {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: 'token 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',
+        Authorization: 'ec3382412182a42ccd3bdd9e7d30281eb91db346',
       },
     })
       .then((response) => {
