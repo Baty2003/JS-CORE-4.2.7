@@ -28,8 +28,8 @@ function debounce(callBack, delay) {
       timer = setTimeout(() => {
         callBack
           .call(this, ...args)
-          .then((dataRepo) => resolve(dataRepo))
-          .catch((err) => reject(err));
+          .then((data) => resolve(data))
+          .catch((error) => reject(error));
       }, delay);
     });
   };
