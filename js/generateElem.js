@@ -1,19 +1,19 @@
 function generateLiResult(text, className, id) {
-  const li = document.createElement('li');
-  li.textContent = text;
-  li.classList.add(className);
-  li.dataset.idRepo = id;
-  return li;
+  const listItem = document.createElement('li');
+  listItem.textContent = text;
+  listItem.classList.add(className);
+  listItem.dataset.idRepository = id;
+  return listItem;
 }
 
 function generateLiRepoList(objectGitRepositories) {
-  const li = document.createElement('li');
-  li.classList.add('repolist__list-item');
-  li.dataset.idrepository = objectGitRepositories.id;
+  const listItem = document.createElement('li');
+  listItem.classList.add('repolist__list-item');
+  listItem.dataset.idrepository = objectGitRepositories.id;
 
   const buttonDelete = document.createElement('button');
   buttonDelete.classList.add('repolist__button-delete');
-  li.append(buttonDelete);
+  listItem.append(buttonDelete);
 
   const paragraphs = [
     document.createElement('p'),
@@ -22,7 +22,8 @@ function generateLiRepoList(objectGitRepositories) {
   ];
   paragraphs[0].textContent = 'Name: ' + objectGitRepositories.name;
   paragraphs[1].textContent = 'Owner: ' + objectGitRepositories.owner.login;
-  paragraphs[2].textContent = 'Stars count: ' + objectGitRepositories.stargazers_count;
+  paragraphs[2].textContent =
+    'Stars count: ' + objectGitRepositories.stargazers_count;
 
   const div = document.createElement('div');
 
@@ -31,9 +32,9 @@ function generateLiRepoList(objectGitRepositories) {
     div.append(paragraph);
   });
 
-  li.prepend(div);
+  listItem.prepend(div);
 
-  return li;
+  return listItem;
 }
 
 export { generateLiResult, generateLiRepoList };

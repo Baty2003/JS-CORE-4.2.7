@@ -16,8 +16,8 @@ autocompleteInput.addEventListener('input', () => {
   if (!autocompleteInput.value) return;
 
   getDataDebounce(autocompleteInput.value)
-    .then(({ items : repositories}) => {
-      dataRepositories = repositories
+    .then(({ items: repositories }) => {
+      dataRepositories = repositories;
       autocompleteResultList.innerHTML = '';
       for (let i = 0; i < 5; i++) {
         autocompleteResultList.append(
@@ -32,8 +32,8 @@ autocompleteInput.addEventListener('input', () => {
     .catch((err) => err);
 });
 
-autocompleteResultList.addEventListener('click', (e) => {
-  const target = e.target;
+autocompleteResultList.addEventListener('click', (event) => {
+  const target = event.target;
   if (target.tagName !== 'LI') return;
 
   const appendElem = generateLiRepoList(dataRepositories[+target.id]);
@@ -45,12 +45,10 @@ autocompleteResultList.addEventListener('click', (e) => {
 });
 
 favoriteRepositoriesList.addEventListener('click', (e) => {
-
   const target = e.target;
   if (!target.classList.contains('repolist__button-delete')) return;
 
   const li = target.closest('li');
 
   li.closest('li').remove();
-
 });
