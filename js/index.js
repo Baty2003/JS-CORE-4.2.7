@@ -1,5 +1,5 @@
 import { getDataDebounce } from './getData.js';
-import { generateLiRepoList, generateLiResult } from './generateElem.js';
+import { generateListItemResult, generateCardRepository } from './generateElem.js';
 
 let dataRepositories;
 
@@ -21,7 +21,7 @@ autocompleteInput.addEventListener('input', () => {
       autocompleteResultList.innerHTML = '';
       for (let i = 0; i < 5; i++) {
         autocompleteResultList.append(
-          generateLiResult(
+          generateListItemResult(
             dataRepositories[i].name,
             'autocomplete__result-list-item',
             i
@@ -36,19 +36,17 @@ autocompleteResultList.addEventListener('click', (event) => {
   const target = event.target;
   if (target.tagName !== 'LI') return;
 
-  const appendElem = generateLiRepoList(dataRepositories[+target.id]);
-
-  favoriteRepositoriesList.append(appendElem);
+  favoriteRepositoriesList.append(generateCardRepository(dataRepositories[+target.id]));
 
   autocompleteInput.value = '';
   autocompleteResultList.innerHTML = '';
 });
 
-favoriteRepositoriesList.addEventListener('click', (e) => {
-  const target = e.target;
+favoriteRepositoriesList.addEventListener('click', (event) => {
+  const target = event.target;
   if (!target.classList.contains('repolist__button-delete')) return;
 
-  const li = target.closest('li');
+  const listItem = target.closest('li');
 
-  li.closest('li').remove();
+  listItem.closest('li').remove();
 });

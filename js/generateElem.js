@@ -1,4 +1,4 @@
-function generateLiResult(text, className, id) {
+function generateListItemResult(text, className, id) {
   const listItem = document.createElement('li');
   listItem.textContent = text;
   listItem.classList.add(className);
@@ -6,35 +6,35 @@ function generateLiResult(text, className, id) {
   return listItem;
 }
 
-function generateLiRepoList(objectGitRepositories) {
+function generateCardRepository(objectGitRepository) {
   const listItem = document.createElement('li');
   listItem.classList.add('repolist__list-item');
-  listItem.dataset.idrepository = objectGitRepositories.id;
+  listItem.dataset.idrepository = objectGitRepository.id;
 
   const buttonDelete = document.createElement('button');
   buttonDelete.classList.add('repolist__button-delete');
   listItem.append(buttonDelete);
 
-  const paragraphs = [
+  const pList = [
     document.createElement('p'),
     document.createElement('p'),
     document.createElement('p'),
   ];
-  paragraphs[0].textContent = 'Name: ' + objectGitRepositories.name;
-  paragraphs[1].textContent = 'Owner: ' + objectGitRepositories.owner.login;
-  paragraphs[2].textContent =
-    'Stars count: ' + objectGitRepositories.stargazers_count;
+  pList[0].textContent = 'Name: ' + objectGitRepository.name;
+  pList[1].textContent = 'Owner: ' + objectGitRepository.owner.login;
+  pList[2].textContent =
+    'Stars count: ' + objectGitRepository.stargazers_count;
 
-  const div = document.createElement('div');
+  const container = document.createElement('div');
 
-  paragraphs.forEach((paragraph) => {
-    paragraph.classList.add('repolist__text');
-    div.append(paragraph);
+  pList.forEach((pElem) => {
+    pElem.classList.add('repolist__text');
+    container.append(pElem);
   });
 
-  listItem.prepend(div);
+  listItem.prepend(container);
 
   return listItem;
 }
 
-export { generateLiResult, generateLiRepoList };
+export { generateListItemResult, generateCardRepository };
