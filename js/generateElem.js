@@ -26,9 +26,9 @@ function generateLiRepoList(objectGitRepositories) {
 
   const div = document.createElement('div');
 
-  p.forEach((elem) => {
-    elem.classList.add('repolist__text');
-    div.append(elem);
+  p.forEach((paragraph) => {
+    paragraph.classList.add('repolist__text');
+    div.append(paragraph);
   });
 
   li.prepend(div);
