@@ -15,18 +15,18 @@ function generateLiRepoList(objectGitRepositories) {
   buttonDelete.classList.add('repolist__button-delete');
   li.append(buttonDelete);
 
-  const p = [
+  const paragraphs = [
     document.createElement('p'),
     document.createElement('p'),
     document.createElement('p'),
   ];
-  p[0].textContent = 'Name: ' + objectGitRepositories.name;
-  p[1].textContent = 'Owner: ' + objectGitRepositories.owner.login;
-  p[2].textContent = 'Stars count: ' + objectGitRepositories.stargazers_count;
+  paragraphs[0].textContent = 'Name: ' + objectGitRepositories.name;
+  paragraphs[1].textContent = 'Owner: ' + objectGitRepositories.owner.login;
+  paragraphs[2].textContent = 'Stars count: ' + objectGitRepositories.stargazers_count;
 
   const div = document.createElement('div');
 
-  p.forEach((paragraph) => {
+  paragraphs.forEach((paragraph) => {
     paragraph.classList.add('repolist__text');
     div.append(paragraph);
   });
